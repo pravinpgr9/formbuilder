@@ -24,8 +24,7 @@
                                         <input type="text" class="form-control" id="{{ $field->id }}" name="{{ $field->id }}" required>
                                     @elseif($field->type === 'textarea')
                                         <textarea class="form-control" id="{{ $field->id }}" name="{{ $field->id }}" rows="3" required></textarea>
-                                    @endif
-                                    <!-- Add more field types as needed -->
+                                    @endif 
                                 </div>
                             @endforeach
 

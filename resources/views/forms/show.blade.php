@@ -22,8 +22,7 @@
                                             <input type="email" name="{{ $field->id }}" id="{{ $field->id }}" class="form-control">
                                         @elseif ($field->type === 'number')
                                             <input type="number" name="{{ $field->id }}" id="{{ $field->id }}" class="form-control">
-                                        @endif
-                                        <!-- More Conditions  -->
+                                        @endif 
                                     </div>
                                     <br/>
                                 @endforeach

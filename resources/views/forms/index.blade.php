@@ -17,7 +17,7 @@
 
                     <div class="card-body">
                         
-                        <!-- Create a new form --> 
+                        
                         @canany(['create-form'])
                         <a class="btn btn-primary" href="{{ route('forms.create') }}">
                             <i class="bi bi-bag"></i> Create New Form</a>
@@ -41,10 +41,10 @@
                                         <td>{{ $form->description }}</td> 
                                         <td>
                                             @if($form->submissions()->where('submitted_by', Auth::id())->exists())
-                                                <!-- Form already submitted by the user,we will disable the buttons -->
+                                                 
                                                 <button type="button" class="btn btn-primary" disabled>Submitted</button>
                                             @else
-                                                <!-- Form not submitted by the user, then enable the buttons -->
+                                                 
                                                 @canany(['create-form'])
                                                     <a href="{{ route('forms.add_fields', $form->id) }}" class="btn btn-primary">Add Fields</a>
                                                     @canany(['create-form'])

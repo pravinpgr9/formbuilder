@@ -26,8 +26,7 @@ class FormController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'nullable|string|max:1000',
-            // Add more validation rules as needed
+            'description' => 'nullable|string|max:1000', 
         ]);
 
         // Add the user ID to the validated data
