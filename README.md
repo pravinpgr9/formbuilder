@@ -92,8 +92,8 @@ Conducted the comprehensive testing to ensure that all features work as expected
 
 ## Installation
 
-1. Clone the repository: git clone
-2. Navigate to the project directory: cd project_management
+1. Clone the repository: git clone <repo>
+2. Navigate to the project directory: cd formbuilder
 3. Install composer dependencies: composer install
 4. Copy the .env.example file to .env and configure your environment variables, including the database connection details.
 5. Generate an application key: php artisan key:generate
