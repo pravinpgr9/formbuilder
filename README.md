@@ -127,9 +127,9 @@ Creds - pravinpgr9@gmail.com / pravin1234
 2. Admin user Creates the Normal user for filling the forms
    ![image](https://github.com/pravinpgr9/formbuilder/assets/15365979/746aa90a-ad80-484c-8b28-f9f885fa085b)
 
-3. Admin user create the form
-
-   ![image](https://github.com/pravinpgr9/formbuilder/assets/15365979/2629861b-2b69-45ca-a7ca-61d8a7c07b40)
+3. Admin user create the form & Edit Update the form
+    
+   ![image](https://github.com/pravinpgr9/formbuilder/assets/15365979/153afe8e-d6df-46d2-b856-cb2def507cd1)
 
    ![image](https://github.com/pravinpgr9/formbuilder/assets/15365979/0e3cdb67-d20c-4f33-a484-71ef28585db3)
 
