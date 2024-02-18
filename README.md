@@ -33,7 +33,7 @@ Additional features with enhancements like on UI Side with CSS. Conducting furth
 1. User Authentication and Roles:
 
 - System supports two types of users: Admin and Normal User.
-- Also Added Super Admin to control the Admin user.
+- Also Added Super Admin to control the Admin user & Make system scalable across different admins
 - Users can register, login, and logout.
 - Admin users have additional privileges compared to Normal Users.
 - Super Admin creates the admin account 
