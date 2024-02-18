@@ -119,6 +119,8 @@ Creds - anupsuper@gmail.com / anup1234
 
 ## Admin User 
 
+Creds - pravinpgr9@gmail.com / pravin1234
+
 1. Admin User Dashobard
    ![image](https://github.com/pravinpgr9/formbuilder/assets/15365979/f85505ec-7a67-41a4-a951-843d86ae85c4)
 
