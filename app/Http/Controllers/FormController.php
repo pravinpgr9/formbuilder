@@ -124,8 +124,22 @@ class FormController extends Controller
         $form->delete();
 
         return redirect()->route('forms.index')->with('success', 'Form deleted successfully.');
+    } 
+
+    public function edit(Form $form)
+    {
+        return view('forms.update', compact('form'));
     }
 
+    public function update(Request $request, Form $form)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000', 
+        ]);
 
+        $form->update($validatedData);
 
+        return redirect()->route('forms.index')->with('success', 'Form updated successfully!');
+    }
 }

@@ -7,13 +7,12 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController; 
 
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\FormSubmissionController; // Assuming you have a controller for handling form submissions
+use App\Http\Controllers\FormSubmissionController;
 
 
 // Debugging route
 // Route::get('/debug', function () {
-//     // Example debugging
-//     $forms = FormController::index(); // Call the method you want to debug
+//     $forms = FormController::index();
 //     dd($forms); // Dump and die
 // });
 
@@ -29,14 +28,17 @@ use App\Http\Controllers\FormSubmissionController; // Assuming you have a contro
 |
 */
 
-
+// Welcome View Route
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Route - authentication, Login, registration
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::resources([...]), Laravel automatically generates multiple routes to handle typical CRUD (Create, Read, Update, Delete) operations.
 
 Route::resources([
     'roles' => RoleController::class,
@@ -44,28 +46,36 @@ Route::resources([
 ]); 
 
 
-// Route group with middleware to ensure authentication is required for access
+// Added Route group with middleware to ensure authentication is required for access
 Route::middleware(['auth'])->group(function () {
 
     // Route for displaying all forms
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
 
-    // Route for displaying the form creation form
+    // Route to display the creation form
     Route::get('/forms/create', [FormController::class, 'create'])->name('forms.create');
 
-    // Route for storing the newly created form
+    // Route to storw the newly created form
     Route::post('/forms', [FormController::class, 'store'])->name('forms.store');
 
     // Route for adding fields to a form
-    Route::get('/forms/{form}/add-fields', [FormController::class, 'addFields'])->name('forms.add_fields');
-
+    Route::get('/forms/{form}/add-fields', [FormController::class, 'addFields'])->name('forms.add_fields'); 
     Route::post('/forms/{form}/fields', [FormController::class, 'storeFields'])->name('forms.fields.store'); 
 
+
+    //Show & Submit the Form
     Route::get('/forms/{form}', [FormController::class, 'show'])->name('forms.show');
     
     Route::post('/forms/{form}', [FormSubmissionController::class, 'submit'])->name('submit_form');
 
+    // Added Route to get stats of the form submission
     Route::get('forms/{form}/statistics', [FormController::class, 'showFormStatistics'])->name('forms.statistics');
 
+    //Route to delete 
     Route::delete('forms/{form}', [FormController::class, 'deleteForm'])->name('forms.delete');
+
+    //Route for Editing the Forms
+    Route::get('/forms/{form}/edit', [FormController::class, 'edit'])->name('forms.edit');
+    Route::put('/forms/{form}', [FormController::class, 'update'])->name('forms.update'); 
+
 });
